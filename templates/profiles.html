@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>User Profiles</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>User Profiles</h1>
+        <ul class="list-group">
+            {% for profile in profiles %}
+                <li class="list-group-item"><a href="{{ url_for('view_profile', profile_id=profile['id']) }}">{{ profile['username'] }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('create_profile') }}" class="btn btn-primary mt-2">Create Profile</a>
+ 
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
